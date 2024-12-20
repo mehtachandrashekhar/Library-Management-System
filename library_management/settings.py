@@ -36,6 +36,18 @@ ALLOWED_HOSTS = [
 ]
 
 
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Additional locations the staticfiles app will traverse if the FileSystemFinder finder
+# is enabled, e.g. if you use the collectstatic or findstatic management command or
+# use the static file serving view.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
