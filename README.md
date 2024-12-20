@@ -1,7 +1,6 @@
-```markdown
 # Library Management System
 
-This project is a basic Library Management System API built using Django, Django REST Framework (DRF), and Celery. The system allows users to manage books and authors, handle book borrowing records, and includes a background task for generating periodic reports on library activity.
+This project is a fully-featured Library Management System API built using Django, Django REST Framework (DRF), and Celery. The system allows users to manage books and authors, handle book borrowing records, and includes a background task for generating periodic reports on library activity.
 
 ## Table of Contents
 
@@ -20,19 +19,19 @@ This project is a basic Library Management System API built using Django, Django
 - Handle book borrowing records.
 - Generate periodic reports on library activity using Celery.
 - API endpoints for CRUD operations on authors, books, and borrow records.
-- Optional bonus features:
+- Advanced features include:
   - Error handling and meaningful response messages.
-  - Unit tests for selected endpoints.
-  - Git version control.
+  - Unit tests for critical endpoints.
+  - Git version control for collaborative development.
   - API documentation using Swagger or DRF-YASG.
-  - User authentication (JWT or session-based) for secured endpoints.
+  - Secure endpoints with user authentication (JWT or session-based).
 
 ## Prerequisites
 
-- Python 3.6+
-- Django 3.0+
-- Django REST Framework 3.11+
-- Celery 4.4+
+- Python 3.8+
+- Django 3.2+
+- Django REST Framework 3.12+
+- Celery 5.0+
 - Redis (for Celery broker)
 
 ## Installation
@@ -71,11 +70,11 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-2. The API will be available at `http://127.0.0.1:8000/api/`.
+2. Access the API at `http://127.0.0.1:8000/api/`.
 
 ## API Documentation
 
-API documentation is available using Swagger or DRF-YASG. You can access it at `http://127.0.0.1:8000/api/docs/`.
+Comprehensive API documentation is available using Swagger or DRF-YASG. Access it at `http://127.0.0.1:8000/api/docs/`.
 
 ## Running Celery
 
@@ -97,9 +96,9 @@ celery -A library_management worker --loglevel=info
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+Contributions are welcome! Fork the repository and submit a pull request with improvements or new features.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
+
