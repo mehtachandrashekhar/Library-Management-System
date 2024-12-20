@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os
-import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,25 +25,6 @@ SECRET_KEY = 'django-insecure-327g^6j@$2#*i%k!5gu^#d=(ih&7i@=2+lq&nf5w105111n^-i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-# Allowed Host
-ALLOWED_HOSTS = [
-    'librarymanagement-django.onrender.com',
-    'localhost',
-    '127.0.0.1',
-]
-
-
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Additional locations the staticfiles app will traverse if the FileSystemFinder finder
-# is enabled, e.g. if you use the collectstatic or findstatic management command or
-# use the static file serving view.
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 
 # Application definition
@@ -95,16 +74,11 @@ WSGI_APPLICATION = 'library_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# Database configuration
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Password validation
@@ -149,11 +123,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # celery config
-# CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-# CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
 
-#
-
-# Celery configuration
-CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
-CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND')
